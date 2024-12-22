@@ -1,0 +1,12 @@
+<h2>Diretivas de atributos</h2>
+
+<div [ngClass]="{ 'background-red': isRed }">Classes Condicionais</div>
+<br />
+<div
+  [ngStyle]="{
+  color: isRed ? 'red' : 'blue',
+  'font-size': size,
+}"
+>
+  Estilos dinâmicos
+</div>
