@@ -1,0 +1,15 @@
+<h2>For control input list</h2>
+
+<input #name>
+<button (click)="addNewPeople(name.value)">Add</button>
+
+@for (people of peoples; track people.name) {
+<p>{{ people.name }}</p>
+<p>index - {{ $index }}</p>
+<p>count - {{ $count }}</p>
+<p>first - {{ $first }}</p>
+<p>last - {{ $last }}</p>
+<p>even - {{ $even }}</p>
+<p>odd - {{ $odd }}</p>
+<hr />
+}

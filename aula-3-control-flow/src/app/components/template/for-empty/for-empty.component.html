@@ -1,0 +1,25 @@
+<h2>For Empty</h2>
+
+<input #name />
+<button (click)="addNewPeople(name.value)">Add</button>
+
+<ul>
+  @for (people of peoples; track people.name) {
+  <li>{{ people.name }}</li>
+  } @empty {<li>No contents...</li>}
+</ul>
+
+<hr>
+
+<h2>Old versions</h2>
+
+<ul>
+<ng-container *ngIf="peoples.length === 0"; else peoplesExists>
+  <li>No contents...</li>
+</ng-container>
+<ng-template #peopleExists>
+  <ng-container *ngFor="let people of peoples">
+    <li>{{ people.name }}</li>
+  </ng-container>
+</ng-template>
+</ul>

@@ -1,0 +1,30 @@
+<h2>Switch Control</h2>
+
+@switch (condition) {
+  @case (1) {
+    <p>Chosen option is 1</p>
+  }
+
+  @case (2) {
+    <p>Chosen option is 2</p>
+  }
+
+  @case (3) {
+    <p>Chosen option is 3</p>
+  }
+
+  @default {
+    <p>No valid option</p>
+  }
+}
+
+<hr>
+
+<h2>Old Versions</h2>
+
+<ng-container [ngSwitch]="condition">
+  <ng-container *ngSwitchCase="1"><p>Chosen option is 1</p></ng-container>
+  <ng-container *ngSwitchCase="2"><p>Chosen option is 2</p></ng-container>
+  <ng-container *ngSwitchCase="3"><p>Chosen option is 3</p></ng-container>
+  <ng-container *ngSwitchDefault><p>No valid option</p></ng-container>
+</ng-container>

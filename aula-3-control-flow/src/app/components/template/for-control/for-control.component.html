@@ -1,0 +1,30 @@
+<h2>For Control</h2>
+
+<div>
+  @if (loadingData$ | async; as data) {
+  <ul>
+    @for (item of data; track item) {
+    <li>{{ item }}</li>
+    }
+  </ul>
+  } @else {
+  <p>loading...</p>
+  }
+
+  <hr />
+  @for (item of loadingData$ | async; track item) {
+  <li>{{ item }}</li>
+  }
+
+  <hr />
+
+  <!-- Forma antes do Angular 17 -->
+  <h2>Old versions</h2>
+  <ng-container *ngIf="loadingData$ | async as data">
+    <ul>
+      <ng-container *ngFor="let item of data; trackBy: trackByFn">
+        <li>{{ item }}</li>
+      </ng-container>
+    </ul>
+  </ng-container>
+</div>
