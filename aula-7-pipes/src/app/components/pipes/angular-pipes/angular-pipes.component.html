@@ -1,0 +1,11 @@
+<ul>
+  <li>Date: {{ date() | date : "dd/MM/yyyy" }}</li>
+  <li>UpperCase: {{ "robson lopes" | uppercase }}</li>
+  <li>LowerCase: {{ "ROBSON LOPES" | lowercase }}</li>
+  <li>Json: {{ json() | json }}</li>
+  <li>Async: {{ loadingData$ | async }}</li>
+  <li>Currency: {{ 200.50 | currency : "BRL" }}</li>
+  <li>Percent: {{ 0.25 | percent }}</li>
+  <li>Number: {{ 2000.549 | number : "1.0-2" }}</li>
+  <li>customPipe: {{ "Robson Lopes" | customPipe: "upper" }}</li>
+</ul>
