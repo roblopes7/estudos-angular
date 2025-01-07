@@ -1,0 +1,11 @@
+<h2>Deferrable Views</h2>
+
+@defer (on timer(5s)) {
+  <app-test-component />
+} @placeholder {
+  <p>Before Loading...</p>
+} @loading {
+  <p>Loading...</p>
+} @error {
+  <p>Loading failed</p>
+}

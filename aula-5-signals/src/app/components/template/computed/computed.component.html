@@ -1,0 +1,13 @@
+<h2>Computed</h2>
+
+<label>Fruit:</label>
+<input #fruitInput>
+<button (click)="addFruit(fruitInput.value)">Add</button>
+
+<br> <br>
+
+<ul>
+  @for (item of array(); track item) {
+    <li> {{ item }}</li>
+  }
+</ul>

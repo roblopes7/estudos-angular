@@ -1,0 +1,13 @@
+<h2>Signals</h2>
+
+<p>fullName: {{ firstName() }} {{ lastName() }}</p>
+
+<label>New First Name:</label>
+<input #firstNameInput>
+<button (click)="updateFirstName(firstNameInput.value)">Update Firstname</button>
+
+<br><br>
+
+<label>New Last Name:</label>
+<input #lastNameInput>
+<button (click)="updateLastName(lastNameInput.value)">Update LastName</button>
