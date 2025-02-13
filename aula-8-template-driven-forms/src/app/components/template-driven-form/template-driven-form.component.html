@@ -1,0 +1,129 @@
+<form #form="ngForm" (ngSubmit)="submit(form)">
+  <label
+    >Nome:
+    <input
+      type="text"
+      name="inputName"
+      #name="ngModel"
+      [ngModel]="name.value"
+      required
+    />
+  </label>
+
+  <hr />
+  <p>value: {{ name.value }}</p>
+  <p>valid: {{ name.valid }}</p>
+  <p>dirty: {{ name.dirty }}</p>
+  <p>touched: {{ name.touched }}</p>
+  <hr />
+
+  <label
+    >Feminino:
+    <input
+      type="radio"
+      value="Feminino"
+      name="radioSexo"
+      #sexo="ngModel"
+      [ngModel]="sexo.value"
+      required
+    />
+  </label>
+
+  <label
+    >Masculino:
+    <input
+      type="radio"
+      value="Masculino"
+      name="radioSexo"
+      #sexo="ngModel"
+      [ngModel]="sexo.value"
+      required
+    />
+  </label>
+
+  <label
+    >Outros:
+    <input
+      type="radio"
+      value="Outros"
+      name="radioSexo"
+      #sexo="ngModel"
+      [ngModel]="sexo.value"
+      required
+    />
+  </label>
+
+  <hr />
+  <p>value: {{ sexo.value }}</p>
+  <hr />
+
+  <label
+    >Angular:
+    <input
+      type="checkbox"
+      value="Angular"
+      name="checkBoxAngular"
+      #techAngular="ngModel"
+      [ngModel]="techAngular.value"
+      required
+    />
+  </label>
+
+  <label
+    >Vuejs:
+    <input
+      type="checkbox"
+      value="Vuejs"
+      name="checkBoxVuejs"
+      #techVuejs="ngModel"
+      [ngModel]="techVuejs.value"
+      required
+    />
+  </label>
+
+  <label
+    >React:
+    <input
+      type="checkbox"
+      value="React"
+      name="checkBoxReact"
+      #techReact="ngModel"
+      [ngModel]="techReact.value"
+      required
+    />
+  </label>
+
+  <hr />
+  <p>value Angular: {{ techAngular.value }}</p>
+  <p>value VueJS: {{ techVuejs.value }}</p>
+  <p>value React: {{ techReact.value }}</p>
+  <hr />
+
+  <select name="selectComidas" #comidas="ngModel" [ngModel]="">
+    <option value="">Selecione um alimento</option>
+    <option value="macarrao">Macarrão</option>
+    <option value="lasanha">Lasanha</option>
+    <option value="pf">Prato Feito</option>
+  </select>
+
+  <hr />
+  <p>Comida: {{ comidas.value }}</p>
+  <hr />
+
+  <select name="selectComidasFor" #comidasFor="ngModel" [ngModel]="">
+    <option value="">Selecione um alimento</option>
+    @for (item of listComidas(); track item) {
+        <option [ngValue]="item"> {{ item.comida }} </option>
+    }
+  </select>
+
+  <hr />
+  <p>Comida: {{ comidasFor.value?.comida }}</p>
+  <p>Preço: {{ comidasFor.value?.preco }}</p>
+  <hr />
+
+    <button>Send</button>
+</form>
+
+<p>{{ form.valid }}</p>
+<p>{{ form.value | json}}</p>
