@@ -1,0 +1,7 @@
+<h3>Home</h3>
+
+<a [routerLink]="['']" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a><br>
+<a [routerLink]="['/sobre']" routerLinkActive="active">Sobre</a><br>
+<a [routerLink]="['/servicos', 'Test']" [queryParams]="{name: 'Machado Assis', yearBirth: 1839}">Serviços Prestados</a><br>
+
+<a [routerLink]="['/inexistente']">Not Found</a><br>

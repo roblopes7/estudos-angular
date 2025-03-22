@@ -1,0 +1,38 @@
+<h2>Services</h2>
+
+<h3>Get List Item</h3>
+<ul>
+  @if (getTaskList(); as data) { @for (item of data; track item) {
+  <li>{{ item.id }} - {{ item.title }} - <button (click)="httpTaskDelete(item.id)"> DELETE </button></li>
+  } @empty {
+  <li>Sem dados carregados...</li>
+  } } @else {
+  <li>Carregando...</li>
+  }
+</ul>
+
+<hr>
+
+<h3>Get Item Id</h3>
+@if (getTaskId(); as data) {
+  <p>{{ data.id }} - {{ data.title }}</p>
+} @else {
+  {{ getTaskIdError() }}
+}
+
+<hr>
+
+<h3>Post Create Item</h3>
+
+<input type="text" #createTitle placeholder="Add title">
+<button (click)="httpTaskCreate(createTitle.value)">Create</button>
+<p>{{ getTaskCreateError() }}</p>
+
+<hr>
+
+<h3>Patch update Item</h3>
+
+<input type="text" #updateId placeholder="Update ID">
+<input type="text" #updateTitle placeholder="Update title">
+<button (click)="httpTaskPatch(updateId.value, updateTitle.value)">Update</button>
+<p>{{ getTaskPatchError() }}</p>
